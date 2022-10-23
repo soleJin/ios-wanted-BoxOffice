@@ -76,7 +76,7 @@ extension DetailViewController {
                 return section
             case .plot, .detail:
                 let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: defaultSpacing, bottom: defaultSpacing, trailing: defaultSpacing)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: defaultSpacing, bottom: bottomSpacing, trailing: defaultSpacing)
                 section.boundarySupplementaryItems = [textHeader]
                 return section
             }
@@ -100,10 +100,9 @@ extension DetailViewController {
         }
         
         let plotCellRegistration = UICollectionView.CellRegistration<PlotCell, PlotInfo>(cellNib: PlotCell.nib()) { cell, _, plot in
-//            cell.appearanceLabel(isOpend: plot.isOpend)
-            cell.plotLabel.numberOfLines = 0
-            cell.openAndCloseLabel.isHidden = true
+            cell.appearanceLabel(isOpend: plot.isOpend)
             cell.configure(with: plot)
+            
         }
        
         let detailCellRegistration = UICollectionView.CellRegistration<DetailInformationCell, DetailInfo>(cellNib: DetailInformationCell.nib()) { cell, _, detailitem in

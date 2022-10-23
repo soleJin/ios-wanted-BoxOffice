@@ -21,7 +21,6 @@ final class PlotCell: UICollectionViewCell {
         plotLabel.text = nil
         plotLabel.numberOfLines = 0
         openAndCloseLabel.text = "...더보기"
-        openAndCloseLabel.isHidden = false
     }
     
     func configure(with item: PlotInfo) {

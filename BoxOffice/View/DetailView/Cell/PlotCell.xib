@@ -23,7 +23,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...더보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOt-iH-LS5">
-                        <rect key="frame" x="0.0" y="18" width="528" height="18"/>
+                        <rect key="frame" x="0.0" y="18" width="528" height="88"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="highlightedColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -32,6 +32,7 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="WOt-iH-LS5" secondAttribute="bottom" id="0zz-0Q-aU7"/>
                 <constraint firstItem="SOt-Gx-vz6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UbZ-K4-g7S"/>
                 <constraint firstAttribute="trailing" secondItem="WOt-iH-LS5" secondAttribute="trailing" id="WzY-74-aQf"/>
                 <constraint firstItem="SOt-Gx-vz6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XNu-pJ-iyb"/>

@@ -40,6 +40,7 @@ final class TrailerCell: UICollectionViewCell {
         totalAttendanceLabel.text = nil
         playImageView.image = UIImage(systemName: "play")
         slashImageView.isHidden = true
+        contentView.backgroundColor = .red
     }
     
     func configure(with item: MainInfo) {
