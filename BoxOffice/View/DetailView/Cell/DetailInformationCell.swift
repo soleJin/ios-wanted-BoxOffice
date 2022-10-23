@@ -39,7 +39,11 @@ final class DetailInformationCell: UICollectionViewCell {
         runningTimeLabel.text = "\(item.runningTime)분"
         genreLabel.text = item.genres
         directorsLabel.text = item.directors
-        actorsLabel.text = item.actors
+        if item.actors == "" {
+            actorsLabel.text = "정보없음"
+        } else {
+            actorsLabel.text = item.actors
+        }
         watchGradeLabel.text = item.watchGrade
     }
     

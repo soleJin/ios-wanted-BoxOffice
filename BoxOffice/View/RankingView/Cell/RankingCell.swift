@@ -68,7 +68,8 @@ final class RankingCell: UICollectionViewCell {
             ratioLabel.text = "\(item.ratioComparedToYesterday)"
             isIncreasedLabel.text = item.isIncreased.stringType
         }
-        rankingLabel.text = "\(item.rank)"
+        // TODO: 절대값 반영 안됨
+        rankingLabel.text = "\(abs(item.rank))"
         koreanNameLabel.text = item.name
         releasedDateLabel.text = item.releasedDate.converToStringTypeForUI + " 개봉"
         dailyAttendanceLabel.text = item.dailyAudience.convertDecimalStringType + "명 관람"

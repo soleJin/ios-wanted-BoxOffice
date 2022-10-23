@@ -176,21 +176,9 @@ extension DetailViewController {
     }
     
     @objc
-    private func didTapShareButton() {
-        guard let mainItem = MovieDataManager.searchItems(detailItems, for: .main).first?.main ,
-              let detailItem = MovieDataManager.searchItems(detailItems, for: .detail).first?.detail ,
-            let path = mainItem.posterPath else { return }
-        let poster = CacheManager.searchCachedImage(with: path)
-        let title = "\(mainItem.name)\n"
-        let totalAttendance = "\(mainItem.totalAudience.convertDecimalStringType)명 관람\n"
-        let dailyRanking = "\(mainItem.rank)위\n"
-        let genres = "\(detailItem.genres)\n"
-        let director = "감독: \(detailItem.directors)\n"
-        let actors = "배우: \(detailItem.actors)\n"
-        let message = "이거 봅시다🥳"
-        let noImageAvailableMessage = "[제공된 이미지 없음]\n"
-        
-        let activityController = UIActivityViewController(activityItems: [poster ?? noImageAvailableMessage, title, totalAttendance, dailyRanking, genres, director, actors, message], applicationActivities: nil)
+    private func didTapShareButton() throws {
+        let view = try ShareContentManager.shanpshot(collectionView)
+        let activityController = UIActivityViewController(activityItems: [view], applicationActivities: nil)
         present(activityController, animated: true)
     }
 }

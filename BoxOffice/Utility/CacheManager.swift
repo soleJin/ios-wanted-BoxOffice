@@ -25,7 +25,7 @@ enum CacheManager {
         let cacheKey = NSString(string: path)
         let data = try await APIManager.fetchData(url: url)
         guard let image = UIImage(data: data) else {
-            throw ImageError.notcached
+            throw ImageError.notCached
         }
         cachedImage.setObject(image, forKey: cacheKey)
         return image

@@ -14,7 +14,7 @@ final class TrailerCell: UICollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var gradientBlackImageView: UIImageView!
     @IBOutlet weak var rankingLabel: UILabel!
-    @IBOutlet weak var ratioComparedToYesterdayLabel: UILabel!
+    @IBOutlet weak var ratioLabel: UILabel!
     @IBOutlet weak var isIncreasedLabel: UILabel!
     @IBOutlet weak var koreanNameLabel: UILabel!
     @IBOutlet weak var englishNameLabel: UILabel!
@@ -22,7 +22,7 @@ final class TrailerCell: UICollectionViewCell {
     @IBOutlet weak var totalAttendanceLabel: UILabel!
     @IBOutlet weak var playImageView: UIImageView!
     @IBOutlet weak var slashImageView: UIImageView!
-    
+    @IBOutlet weak var compareToYesterdayLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         appearanceOfPosterImageView()
@@ -32,7 +32,7 @@ final class TrailerCell: UICollectionViewCell {
         backdropImageView.image = nil
         posterImageView.image = nil
         rankingLabel.text = nil
-        ratioComparedToYesterdayLabel.text = nil
+        ratioLabel.text = nil
         isIncreasedLabel.text = nil
         koreanNameLabel.text = nil
         englishNameLabel.text = nil
@@ -72,14 +72,21 @@ final class TrailerCell: UICollectionViewCell {
                 playImageView.image = UIImage(systemName: "play.slash")
             }
         }
+        if item.isNewInRank == .new {
+            compareToYesterdayLabel.isHidden = true
+            ratioLabel.isHidden = true
+            isIncreasedLabel.text = "진입"
+        } else {
+            ratioLabel.text = "\(item.ratioComparedToYesterday)"
+            isIncreasedLabel.text = item.isIncreased.stringType
+        }
         
-        rankingLabel.text = "\(item.rank)"
-        ratioComparedToYesterdayLabel.text = "\(item.ratioComparedToYesterday)"
-        isIncreasedLabel.text = "up↑↑"
+        rankingLabel.text = "\(abs(item.rank))"
+        ratioLabel.text = "\(item.ratioComparedToYesterday)"
         koreanNameLabel.text = item.name
         englishNameLabel.text = item.nameInEnglish
-        releasedDateLabel.text = item.releasedDate.converToStringTypeForUI
-        totalAttendanceLabel.text = "누적관객수 \(item.totalAudience.convertDecimalStringType)명"
+        releasedDateLabel.text = item.releasedDate.converToStringTypeForUI + "개봉"
+        totalAttendanceLabel.text = item.totalAudience.convertDecimalStringType + "명 관람"
     }
     
     static func nib() -> UINib {

@@ -66,13 +66,23 @@ enum APIError: Error {
 }
 
 enum ImageError: Error {
-    case failToLoad
-    case notcached
+    case notCached
     
     var localizedDescription: String {
         switch self {
-        case .failToLoad: return "이미지를 로드하지 못했습니다."
-        case .notcached: return "캐시된 이미지가 없습니다."
+        case .notCached: return "캐시된 이미지가 없습니다."
+        }
+    }
+}
+
+enum ShareContentError: Error {
+    case failToLoadContent
+    case failToRendering
+    
+    var localizedDescription: String {
+        switch self {
+        case .failToLoadContent: return "컨텐츠를 불러오는 데 실패했습니다."
+        case .failToRendering: return "컨텐츠를 렌더링하는 데 실패했습니다."
         }
     }
 }
