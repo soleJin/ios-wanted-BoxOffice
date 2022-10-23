@@ -10,6 +10,8 @@ import UIKit
 final class RankingHeaderView: UICollectionReusableView {
     static let nibName = "RankingHeaderView"
     static let elementKind = "ranking-header"
+    static let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(40))
+    static let supplementaryItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSize, elementKind: elementKind, alignment: .top)
     
     @IBOutlet weak var selectedDate: UILabel!
     @IBOutlet weak var calendarButton: UIButton!

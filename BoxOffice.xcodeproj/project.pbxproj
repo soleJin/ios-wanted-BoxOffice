@@ -157,6 +157,49 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		FD7756CC2904F50F00671D89 /* SupplementaryItem */ = {
+			isa = PBXGroup;
+			children = (
+				FDAE1FC128FEF93800F3DE22 /* RankingHeaderView.swift */,
+				FDAE1FC228FEF93800F3DE22 /* RankingHeaderView.xib */,
+			);
+			path = SupplementaryItem;
+			sourceTree = "<group>";
+		};
+		FD7756CD2904F51B00671D89 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FDAE1FBD28FEEA9D00F3DE22 /* RankingCell.swift */,
+				FDAE1FBE28FEEA9D00F3DE22 /* RankingCell.xib */,
+				FDAE1FC528FEFCE300F3DE22 /* OnboardingCell.swift */,
+				FDFCF1E429003207000BA6EA /* OnboardingCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FD7756CE2904F52F00671D89 /* SupplementaryITem */ = {
+			isa = PBXGroup;
+			children = (
+				FDFCF1FD29006B89000BA6EA /* TextHeaderView.swift */,
+				FDFCF1FE29006B89000BA6EA /* TextHeaderView.xib */,
+			);
+			path = SupplementaryITem;
+			sourceTree = "<group>";
+		};
+		FD7756CF2904F53700671D89 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FDFCF1F9290035EF000BA6EA /* TrailerCell.swift */,
+				FDFCF1FA290035EF000BA6EA /* TrailerCell.xib */,
+				FDFCF1F129003491000BA6EA /* PlotCell.swift */,
+				FDFCF1F229003491000BA6EA /* PlotCell.xib */,
+				FDFCF1F5290034AB000BA6EA /* DetailInformationCell.swift */,
+				FDFCF1F6290034AB000BA6EA /* DetailInformationCell.xib */,
+				FD44781C29017E90002D02CA /* FloatingView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FDFCF1E829003350000BA6EA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,15 +233,8 @@
 		FDFCF1EB29003399000BA6EA /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
-				FDFCF1FD29006B89000BA6EA /* TextHeaderView.swift */,
-				FDFCF1FE29006B89000BA6EA /* TextHeaderView.xib */,
-				FDFCF1F9290035EF000BA6EA /* TrailerCell.swift */,
-				FDFCF1FA290035EF000BA6EA /* TrailerCell.xib */,
-				FDFCF1F129003491000BA6EA /* PlotCell.swift */,
-				FDFCF1F229003491000BA6EA /* PlotCell.xib */,
-				FDFCF1F5290034AB000BA6EA /* DetailInformationCell.swift */,
-				FDFCF1F6290034AB000BA6EA /* DetailInformationCell.xib */,
-				FD44781C29017E90002D02CA /* FloatingView.swift */,
+				FD7756CF2904F53700671D89 /* Cell */,
+				FD7756CE2904F52F00671D89 /* SupplementaryITem */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -206,12 +242,8 @@
 		FDFCF1EC290033A7000BA6EA /* RankingView */ = {
 			isa = PBXGroup;
 			children = (
-				FDAE1FBD28FEEA9D00F3DE22 /* RankingCell.swift */,
-				FDAE1FBE28FEEA9D00F3DE22 /* RankingCell.xib */,
-				FDAE1FC128FEF93800F3DE22 /* RankingHeaderView.swift */,
-				FDAE1FC228FEF93800F3DE22 /* RankingHeaderView.xib */,
-				FDAE1FC528FEFCE300F3DE22 /* OnboardingCell.swift */,
-				FDFCF1E429003207000BA6EA /* OnboardingCell.xib */,
+				FD7756CD2904F51B00671D89 /* Cell */,
+				FD7756CC2904F50F00671D89 /* SupplementaryItem */,
 			);
 			path = RankingView;
 			sourceTree = "<group>";

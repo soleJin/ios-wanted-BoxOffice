@@ -10,6 +10,8 @@ import UIKit
 final class TextHeaderView: UICollectionReusableView {
     static let nibName = "TextHeaderView"
     static let elementKind = "text-header"
+    static let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(40))
+    static let supplementaryItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSize, elementKind: elementKind, alignment: .top)
     
     @IBOutlet weak var sectionTitleLabel: UILabel!
     

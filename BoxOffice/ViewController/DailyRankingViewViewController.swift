@@ -88,8 +88,7 @@ extension DailyRankingViewController {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
             
             let section = MainSection(rawValue: sectionIndex)!
-            
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(40))
+            let rankingHeader = RankingHeaderView.supplementaryItem
             
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -115,8 +114,6 @@ extension DailyRankingViewController {
                 section.orthogonalScrollingBehavior = .continuous
                 section.interGroupSpacing = defaultSpacing
                 section.contentInsets = NSDirectionalEdgeInsets(top: defaultSpacing, leading: defaultSpacing, bottom: bottomSpacing, trailing: defaultSpacing)
-                
-                let rankingHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: RankingHeaderView.elementKind, alignment: .top)
                 section.boundarySupplementaryItems = [rankingHeader]
                 return section
             }

@@ -58,39 +58,23 @@ extension DetailViewController {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
             
             let section = DetailSection(rawValue: sectionIndex)!
-
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                    heightDimension: .absolute(40))
-            let textHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
-                                                                         elementKind: TextHeaderView.elementKind,
-                                                                         alignment: .top)
+            let textHeader = TextHeaderView.supplementaryItem
             textHeader.pinToVisibleBounds = true
             
             let defaultSpacing = CGFloat(15)
             let bottomSpacing = CGFloat(30)
-            
+            let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                  heightDimension: .estimated(50))
+            let item = NSCollectionLayoutItem(layoutSize: layoutSize)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize,
+                                                           subitem: item,
+                                                           count: 1)
             switch section {
-            // trailer section layout
             case .main:
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                      heightDimension: .fractionalWidth(1.0))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize,
-                                                               subitem: item,
-                                                               count: 1)
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: bottomSpacing, trailing: 0)
                 return section
-                
-            // plot, detail section layout
-            // TODO: - estimated가 적용되지 않음?
             case .plot, .detail:
-                let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                        heightDimension: .estimated(100))
-                let item = NSCollectionLayoutItem(layoutSize: layoutSize)
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: layoutSize,
-                                                             subitem: item,
-                                                             count: 1)
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: defaultSpacing, bottom: defaultSpacing, trailing: defaultSpacing)
                 section.boundarySupplementaryItems = [textHeader]
