@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: - 긴 화면일 경우 아래가 짤림(배우명이 길 때)
 enum ShareContentManager {
     static func shanpshot(_ view: UIScrollView) throws -> UIImage {
         UIGraphicsBeginImageContext(view.contentSize)

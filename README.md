@@ -1,10 +1,11 @@
 # BoxOffice
 
-![](https://user-images.githubusercontent.com/73588175/197322403-11bfc2ae-5ac9-451d-84b1-82317cf4c67c.gif) <br>
-(동영상 재생을 위해 tmdb api 사용)
+| 일별 랭킹페이지 | 상세정보 페이지 | 공유 페이지 |
+| ---------------- | ---------------- | ---------------- |
+|![](https://user-images.githubusercontent.com/73588175/197400984-8c34d5e4-47bc-4e28-9ac7-5c21b8cc98ab.gif)|![](https://user-images.githubusercontent.com/73588175/197400990-7271abf0-72c0-4a19-80b5-9540f8e54eb9.gif)|![](https://user-images.githubusercontent.com/73588175/197400995-a088f4c4-0e2f-4bf6-9c0f-6a77307fc8fd.gif)|
 
 # Feature
-### 일별 랭킹 페이지
+### 일별 랭킹페이지
 전날을 기준으로 순위별 10위까지의 영화정보 로드<br>
 api에 없는 정보(이미지, 동영상, 줄거리)는 No Image Available, Trailer Available, 정보없음 등으로 대체<br>
 각 셀을 터치하면 상세정보 페이지로 이동
@@ -18,7 +19,7 @@ api에 없는 정보(이미지, 동영상, 줄거리)는 No Image Available, Tra
 <br>
 
 ### 공유페이지
-영화 포스터, 순위, 제목, 장르, 감독, 배우같은 중요정보 공유
+현재 페이지를 이미지로 공유
 <br>
 <br>
 <br>
@@ -42,7 +43,7 @@ api에 없는 정보(이미지, 동영상, 줄거리)는 No Image Available, Tra
 <br>
 
 ### 컬렉션셀의 동적 높이적용
-분명 [apple에서 소개하고 있는 예제](https://developer.apple.com/documentation/uikit/views_and_controls/collection_views/implementing_modern_collection_views)에서는
+분명 [apple에서 소개하고 있는 예제](https://developer.apple.com/documentation/uikit/views_and_controls/collection_views/implementing_modern_collection_views)를 참고해서 적용했는데,
 ```swift
 func createLayout() -> UICollectionViewLayout {
     let estimatedHeight = CGFloat(100)
@@ -59,5 +60,6 @@ func createLayout() -> UICollectionViewLayout {
     return layout
 }
 ```
-이렇게 item과 group에 같은 fractionalWidth로, 같은 estimatedHeight로 동적 높이를 주던데 나는 왜 안됐는지 아직 해결하지 못했다.
-오토레이아웃을 좀 더 공부하고 다시 봐야할 것 같다.
+내 컬렉션뷰에는 적용되지 않았다. 이유는 estimate를 적용하고 싶다면,  
+셀과 연결된 컨텐츠의 leading, trailing, top, bottom의 constraints를 정확히 주어야 했는데 bottom 대신 비율만 줬기 때문이었다.   
+호오😉
