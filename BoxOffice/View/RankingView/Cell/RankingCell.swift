@@ -18,7 +18,6 @@ final class RankingCell: UICollectionViewCell {
     @IBOutlet weak var releasedDateLabel: UILabel!
     @IBOutlet weak var dailyAttendanceLabel: UILabel!
     @IBOutlet weak var gradientBlackView: UIImageView!
-    @IBOutlet weak var slashImageView: UIImageView!
     @IBOutlet weak var compareToYesterdayLabel: UILabel!
     
     override func awakeFromNib() {
@@ -34,7 +33,6 @@ final class RankingCell: UICollectionViewCell {
         koreanNameLabel.text = nil
         releasedDateLabel.text = nil
         dailyAttendanceLabel.text = nil
-        slashImageView.isHidden = true
     }
     
     func configure(with item: Movie) {
@@ -56,7 +54,6 @@ final class RankingCell: UICollectionViewCell {
         if item.posterPath == nil {
             Task(priority: .userInitiated) {
                 posterImageView.image = UIImage(named: "noImage")
-                slashImageView.isHidden = false
             }
         }
         
@@ -78,7 +75,6 @@ final class RankingCell: UICollectionViewCell {
     private func appearanceOfPosterImageView() {
         posterImageView.isCorner(radius: 10)
         gradientBlackView.isCorner(radius: 10)
-        slashImageView.isHidden = true
     }
     
     static func nib() -> UINib {

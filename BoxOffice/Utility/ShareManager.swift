@@ -1,5 +1,5 @@
 //
-//  ShareImageManager.swift
+//  ShareManager.swift
 //  BoxOffice
 //
 //  Created by sole on 2022/10/23.
@@ -8,7 +8,7 @@
 import UIKit
 
 // TODO: - 긴 화면일 경우 아래가 짤림(배우명이 길 때)
-enum ShareContentManager {
+enum ShareManager {
     static func shanpshot(_ view: UIScrollView) throws -> UIImage {
         UIGraphicsBeginImageContext(view.contentSize)
         let savedContentOffset = view.contentOffset

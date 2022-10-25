@@ -177,7 +177,7 @@ extension DetailViewController {
     
     @objc
     private func didTapShareButton() throws {
-        let view = try ShareContentManager.shanpshot(collectionView)
+        let view = try ShareManager.shanpshot(collectionView)
         let activityController = UIActivityViewController(activityItems: [view], applicationActivities: nil)
         present(activityController, animated: true)
     }

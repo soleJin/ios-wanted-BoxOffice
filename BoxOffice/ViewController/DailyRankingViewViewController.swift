@@ -177,7 +177,7 @@ extension DailyRankingViewController: UICollectionViewDelegate {
         if segue.identifier == "goToDetailViewController",
            let items = sender as? [DetailItem],
            let detailViewController = segue.destination as? DetailViewController {
-            detailViewController.detailItems = items
+            detailViewController.detailItems.append(contentsOf: items)
         }
     }
 

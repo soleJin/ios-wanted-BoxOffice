@@ -21,7 +21,6 @@ final class TrailerCell: UICollectionViewCell {
     @IBOutlet weak var releasedDateLabel: UILabel!
     @IBOutlet weak var totalAttendanceLabel: UILabel!
     @IBOutlet weak var playImageView: UIImageView!
-    @IBOutlet weak var slashImageView: UIImageView!
     @IBOutlet weak var compareToYesterdayLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,7 +38,6 @@ final class TrailerCell: UICollectionViewCell {
         releasedDateLabel.text = nil
         totalAttendanceLabel.text = nil
         playImageView.image = UIImage(systemName: "play")
-        slashImageView.isHidden = true
         contentView.backgroundColor = .red
     }
     
@@ -67,7 +65,6 @@ final class TrailerCell: UICollectionViewCell {
         if item.posterPath == nil {
             Task(priority: .userInitiated) {
                 posterImageView.image = UIImage(named: "noImage")
-                slashImageView.isHidden = false
                 backdropImageView.image = UIImage(named: "noTrailer")
                 playImageView.image = UIImage(systemName: "play.slash")
             }
@@ -96,6 +93,5 @@ final class TrailerCell: UICollectionViewCell {
     private func appearanceOfPosterImageView() {
         posterImageView.isCorner(radius: 10)
         gradientBlackImageView.isCorner(radius: 10)
-        slashImageView.isHidden = true
     }
 }
